@@ -6,40 +6,45 @@
     --seg-color: #4E31AA;
     --tercer-color: #2F58CD;
     --cuarto-color: #3795BD;
+    --letra: white;
     --fontbody: 'Playfair Display', serif;
 
 
 }
+
 * {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html {
-	font-size: 62.5%;
+    font-size: 62.5%;
     font-family: var(--fontbody)
 }
 
 body {
     font-size: 2.3rem;
-    background-color: var(--cuarto-color);
+    background-color: var(--primer-color);
 }
 
-#seleccionar-mascota, .titulo {
+
+
+#seleccionar-mascota,
+.titulo {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.tarjetas {
+.tarjetas, .botones-ataques {
     display: flex;
-    gap: 1rem;/*espaciado*/
+    gap: 1rem;
     margin-top: 3rem;
 }
 
-.tarjeta-mokepon{
+.tarjeta-mokepon {
     width: 35rem;
     height: 24rem;
     background-color: var(--seg-color);
@@ -51,7 +56,7 @@ body {
     align-items: center;
 }
 
-.tarjeta-mokepon img{
+.tarjeta-mokepon img {
     width: 20rem;
 }
 
@@ -62,7 +67,8 @@ body {
     border-style: solid;
 }
 
-#boton-seleccionarmascota, .boton-de-ataque {
+#boton-seleccionarmascota,
+.boton-de-ataque {
     width: 35rem;
     height: 4rem;
     border: .2rem transparent;
@@ -70,29 +76,28 @@ body {
     margin-top: 3rem;
     font-family: 'Playfair Display', serif;
     font-size: 1.7rem;
-    background-color: var(--seg-color);
+    background-color: var(--cuarto-color);
     cursor: pointer;
 
 }
 
-#boton-seleccionarmascota:hover, .boton-de-ataque:hover {
-    background-color: var(--primer-color);
+#boton-seleccionarmascota:hover,
+.boton-de-ataque:hover {
+    background-color: var(--tercer-color);
     transition: .4s;
 }
 
 .titulo {
-    font-size: 10rem;
+    font-size: 7rem;
     font-family: 'Tilt Prism', cursive;
 }
 
-.subtitulo {
+.subtitulo {}
 
+input:checked + label{
+ background-color: #8c76d3;
 }
 
-input:checked label {
-    background-color: hotpink;
-  }
-  
 input {
     display: none;
 }
@@ -103,5 +108,54 @@ input {
     align-items: center;
 }
 
+#mensajes {
+    width: 40rem;
+    background-color: var(--seg-color);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
+#boton-reiniciar {
+    border: none;
+    color: white;
+    background-color: var(--seg-color);
+}
 
+.ataques {
+    display: grid;
+    grid-template-columns: 20rem 20rem;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.ataques-tarjeta-j, .ataques-tarjeta-e {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.ataques-tarjeta-j{
+    background-color: rgba(16, 187, 93, 0.3);
+}
+.ataques-tarjeta-e{
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+#vidas-enemigo,
+#vidas-jugador {
+    font-size: 5rem;
+    color: white;
+
+}
+
+@media (max-width: 400px) {
+    .tarjetas, .botones-ataques {
+        flex-direction: column;
+    }
+}

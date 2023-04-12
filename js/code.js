@@ -119,10 +119,9 @@ function revisarVidas(){
 }
 
 function crearMensajefinal(resultadoFinal) {
-    let sectionMensajes = document.getElementById('mensajes')
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = resultadoFinal  
-    sectionMensajes.appendChild(parrafo)
+    let sectionMensajes = document.getElementById('resultado')
+
+    sectionMensajes.innerHTML = resultadoFinal 
 
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.disabled = true
@@ -130,6 +129,9 @@ function crearMensajefinal(resultadoFinal) {
     botonAgua.disabled = true
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.disabled = true
+
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'block'
 }
 
 function crearMensaje(resultado) {
@@ -137,7 +139,6 @@ function crearMensaje(resultado) {
     let ataquesDelJugador = document.getElementById('ataques-del-jugador')
     let ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
 
-    let notificacion = document.createElement('p')
     let nuevoAtaqueDelJugador = document.createElement('p')
     let nuevoAtaqueDelEnemigo = document.createElement('p')
 
@@ -145,8 +146,6 @@ function crearMensaje(resultado) {
     nuevoAtaqueDelJugador.innerHTML = ataqueJugador
     nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
 
-    // let parrafo = document.createElement('p')
-    // parrafo.innerHTML = 'Tu mascota atacó con '+ataqueJugador+', la mascota del enemigo atacó con '+ ataqueEnemigo+' - '+resultado
 
      ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)
      ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
