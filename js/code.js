@@ -23,9 +23,9 @@ function iniciarJuego(){
 
 function seleccionarMascota() {
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
-    sectionSeleccionarAtaque.style.display = 'block'
+    sectionSeleccionarAtaque.style.display = 'flex'
     let sectionReiniciar = document.getElementById('reiniciar')
-    sectionReiniciar.style.display = 'block'
+    sectionReiniciar.style.display = 'flex'
     let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
     sectionSeleccionarMascota.style.display = 'none'
 
@@ -133,10 +133,24 @@ function crearMensajefinal(resultadoFinal) {
 }
 
 function crearMensaje(resultado) {
-    let sectionMensajes = document.getElementById('mensajes')
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = 'Tu mascota atacó con '+ataqueJugador+', la mascota del enemigo atacó con '+ ataqueEnemigo+' - '+resultado
-    sectionMensajes.appendChild(parrafo)
+    let sectionMensajes = document.getElementById('resultado')
+    let ataquesDelJugador = document.getElementById('ataques-del-jugador')
+    let ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
+
+    let notificacion = document.createElement('p')
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
+
+    sectionMensajes.innerHTML = resultado
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
+
+    // let parrafo = document.createElement('p')
+    // parrafo.innerHTML = 'Tu mascota atacó con '+ataqueJugador+', la mascota del enemigo atacó con '+ ataqueEnemigo+' - '+resultado
+
+     ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)
+     ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
+
 }
 
 function reiniciarJuego(){

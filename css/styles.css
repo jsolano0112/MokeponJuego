@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap');
+
+:root {
+    --primer-color: #3A1078;
+    --seg-color: #4E31AA;
+    --tercer-color: #2F58CD;
+    --cuarto-color: #3795BD;
+    --fontbody: 'Playfair Display', serif;
+
+
+}
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+    font-family: var(--fontbody)
+}
+
+body {
+    font-size: 2.3rem;
+    background-color: var(--cuarto-color);
+}
+
+#seleccionar-mascota, .titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjetas {
+    display: flex;
+    gap: 1rem;/*espaciado*/
+    margin-top: 3rem;
+}
+
+.tarjeta-mokepon{
+    width: 35rem;
+    height: 24rem;
+    background-color: var(--seg-color);
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta-mokepon img{
+    width: 20rem;
+}
+
+.tarjeta-mokepon:hover {
+    cursor: pointer;
+    border: .7rem var(--tercer-color);
+    transition: .3s;
+    border-style: solid;
+}
+
+#boton-seleccionarmascota, .boton-de-ataque {
+    width: 35rem;
+    height: 4rem;
+    border: .2rem transparent;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    background-color: var(--seg-color);
+    cursor: pointer;
+
+}
+
+#boton-seleccionarmascota:hover, .boton-de-ataque:hover {
+    background-color: var(--primer-color);
+    transition: .4s;
+}
+
+.titulo {
+    font-size: 10rem;
+    font-family: 'Tilt Prism', cursive;
+}
+
+.subtitulo {
+
+}
+
+input:checked label {
+    background-color: hotpink;
+  }
+  
+input {
+    display: none;
+}
+
+#seleccionar-ataque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
